@@ -25,7 +25,9 @@
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./dist",
     "build:dll": "cross-env BUILDING_DLL=true webpack --display-chunks --color --config build/webpack.dll.conf.js --hide-modules",
-    "prettify": "prettier --write ./**/*.js"
+    "prettify": "prettier --write ./**/*.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "browserslist": [
     "> 1%",
@@ -135,11 +137,13 @@
     "qs": "^6.5.2",
     "sanitize.css": "^6.0.0",
     "smoothscroll-polyfill": "^0.4.3",
-    "ua-parser-js": "^0.7.18"
+    "ua-parser-js": "^0.7.18",
+    "snyk": "^1.161.1"
   },
   "devEngines": {
     "node": ">=8",
     "npm": ">=5",
     "yarn": ">=1"
-  }
+  },
+  "snyk": true
 }
